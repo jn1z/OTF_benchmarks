@@ -1,0 +1,2 @@
+include ':OTF'
+project(':OTF').projectDir = file('../OTF')
