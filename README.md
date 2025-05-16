@@ -1,8 +1,10 @@
 # OTF (On-The-Fly) Algorithm Benchmarks
 
-See the paper [Deconstructing Subset Construction: Reducing While Determinizing]() for more details.
+See the paper [Deconstructing Subset Construction: Reducing While Determinizing](https://arxiv.org/abs/2505.10319) for more details, submitted for publication.
 
 # Algorithm Configurations
+
+See the [OTF tool](https://github.com/jn1z/OTF) or the paper for details on algorithm configurations.
 
 # Language Projection
 
