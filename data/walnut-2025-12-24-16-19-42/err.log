@@ -1,0 +1,310 @@
+######
+/workdir/OTF_benchmark/benchmarks/res.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=SC']
+res.ba,200,5312,,,,,5312,5312,,,,,,,,2479675183,,,,,,2479675183,
+java.lang.NegativeArraySizeException: -1224091096
+	at net.automatalib.automaton.base.AbstractCompact.lambda$updateTransitionStorage$0(AbstractCompact.java:261)
+	at net.automatalib.automaton.base.AbstractCompact$TransitionUpdateOperation$1.updateStorage(AbstractCompact.java:363)
+	at net.automatalib.automaton.base.AbstractCompact.updateTransitionStorage(AbstractCompact.java:261)
+	at net.automatalib.automaton.base.AbstractCompactSimpleDeterministic.updateTransitionStorage(AbstractCompactSimpleDeterministic.java:81)
+	at net.automatalib.automaton.base.AbstractCompact.ensureCapacity(AbstractCompact.java:139)
+	at net.automatalib.automaton.base.AbstractCompact.addIntState(AbstractCompact.java:117)
+	at net.automatalib.automaton.base.AbstractCompact.addState(AbstractCompact.java:112)
+	at net.automatalib.automaton.fsa.impl.CompactDFA.addState(CompactDFA.java:80)
+	at net.automatalib.automaton.fsa.impl.CompactDFA.addState(CompactDFA.java:25)
+	at net.automatalib.util.automaton.fsa.NFAs.doDeterminize(NFAs.java:514)
+	at net.automatalib.util.automaton.fsa.NFAs.determinize(NFAs.java:421)
+	at net.automatalib.util.automaton.fsa.NFAs.determinize(NFAs.java:396)
+	at OTF_benchmark.BenchmarkSC$SCJob.run(BenchmarkSC.java:82)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/wleqfac.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=SC']
+wleqfac.ba,343,512,,,,,512,512,,,,,,,,761265150,,,,,,761265150,
+java.lang.NegativeArraySizeException: -1954277329
+	at net.automatalib.automaton.base.AbstractCompact.lambda$updateTransitionStorage$0(AbstractCompact.java:261)
+	at net.automatalib.automaton.base.AbstractCompact$TransitionUpdateOperation$1.updateStorage(AbstractCompact.java:363)
+	at net.automatalib.automaton.base.AbstractCompact.updateTransitionStorage(AbstractCompact.java:261)
+	at net.automatalib.automaton.base.AbstractCompactSimpleDeterministic.updateTransitionStorage(AbstractCompactSimpleDeterministic.java:81)
+	at net.automatalib.automaton.base.AbstractCompact.ensureCapacity(AbstractCompact.java:139)
+	at net.automatalib.automaton.base.AbstractCompact.addIntState(AbstractCompact.java:117)
+	at net.automatalib.automaton.base.AbstractCompact.addState(AbstractCompact.java:112)
+	at net.automatalib.automaton.fsa.impl.CompactDFA.addState(CompactDFA.java:80)
+	at net.automatalib.automaton.fsa.impl.CompactDFA.addState(CompactDFA.java:25)
+	at net.automatalib.util.automaton.fsa.NFAs.doDeterminize(NFAs.java:514)
+	at net.automatalib.util.automaton.fsa.NFAs.determinize(NFAs.java:421)
+	at net.automatalib.util.automaton.fsa.NFAs.determinize(NFAs.java:396)
+	at OTF_benchmark.BenchmarkSC$SCJob.run(BenchmarkSC.java:82)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/tribpseudo3.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=SC']
+tribpseudo3.ba,8,60317,,,,,60317,58366,,,,,,,,3132910821,,,,,,3132910821,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.BitSet.initWords(BitSet.java:169)
+	at java.base/java.util.BitSet.<init>(BitSet.java:164)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet$CompactPowersetDTS.getTransition(AbstractCompactSimpleNondet.java:229)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet$CompactPowersetDTS.getTransition(AbstractCompactSimpleNondet.java:225)
+	at net.automatalib.ts.DeterministicTransitionSystem.getSuccessor(DeterministicTransitionSystem.java:45)
+	at net.automatalib.util.automaton.fsa.NFAs.doDeterminize(NFAs.java:508)
+	at net.automatalib.util.automaton.fsa.NFAs.determinize(NFAs.java:421)
+	at net.automatalib.util.automaton.fsa.NFAs.determinize(NFAs.java:396)
+	at OTF_benchmark.BenchmarkSC$SCJob.run(BenchmarkSC.java:82)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/pisotfaceeq.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=SC']
+pisotfaceeq.ba,8,37095,,,,,37095,36261,,,,,,,,1420794036,,,,,,1420794036,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.BitSet.initWords(BitSet.java:169)
+	at java.base/java.util.BitSet.<init>(BitSet.java:164)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet$CompactPowersetDTS.getTransition(AbstractCompactSimpleNondet.java:229)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet$CompactPowersetDTS.getTransition(AbstractCompactSimpleNondet.java:225)
+	at net.automatalib.ts.DeterministicTransitionSystem.getSuccessor(DeterministicTransitionSystem.java:45)
+	at net.automatalib.util.automaton.fsa.NFAs.doDeterminize(NFAs.java:508)
+	at net.automatalib.util.automaton.fsa.NFAs.determinize(NFAs.java:421)
+	at net.automatalib.util.automaton.fsa.NFAs.determinize(NFAs.java:396)
+	at OTF_benchmark.BenchmarkSC$SCJob.run(BenchmarkSC.java:82)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/jaef.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=SC']
+jaef.ba,8,55455,,,,,55455,42095,,,,,,,,2011803819,,,,,,2011803819,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.BitSet.initWords(BitSet.java:169)
+	at java.base/java.util.BitSet.<init>(BitSet.java:164)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet$CompactPowersetDTS.getTransition(AbstractCompactSimpleNondet.java:229)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet$CompactPowersetDTS.getTransition(AbstractCompactSimpleNondet.java:225)
+	at net.automatalib.ts.DeterministicTransitionSystem.getSuccessor(DeterministicTransitionSystem.java:45)
+	at net.automatalib.util.automaton.fsa.NFAs.doDeterminize(NFAs.java:508)
+	at net.automatalib.util.automaton.fsa.NFAs.determinize(NFAs.java:421)
+	at net.automatalib.util.automaton.fsa.NFAs.determinize(NFAs.java:396)
+	at OTF_benchmark.BenchmarkSC$SCJob.run(BenchmarkSC.java:82)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/wleqfac.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=SC_S']
+wleqfac.ba,343,512,,,,,512,512,513,,,,,,,717119054,1172291743,,,,,1889410797,
+java.lang.NegativeArraySizeException: -1954277329
+	at net.automatalib.automaton.base.AbstractCompact.lambda$updateTransitionStorage$0(AbstractCompact.java:261)
+	at net.automatalib.automaton.base.AbstractCompact$TransitionUpdateOperation$1.updateStorage(AbstractCompact.java:363)
+	at net.automatalib.automaton.base.AbstractCompact.updateTransitionStorage(AbstractCompact.java:261)
+	at net.automatalib.automaton.base.AbstractCompactSimpleDeterministic.updateTransitionStorage(AbstractCompactSimpleDeterministic.java:81)
+	at net.automatalib.automaton.base.AbstractCompact.ensureCapacity(AbstractCompact.java:139)
+	at net.automatalib.automaton.base.AbstractCompact.addIntState(AbstractCompact.java:117)
+	at net.automatalib.automaton.base.AbstractCompact.addState(AbstractCompact.java:112)
+	at net.automatalib.automaton.fsa.impl.CompactDFA.addState(CompactDFA.java:80)
+	at OTF.OTFDeterminization.doOTF(OTFDeterminization.java:58)
+	at OTF_benchmark.BenchmarkSimSC$SCJob.run(BenchmarkSimSC.java:102)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/res.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=SC_S']
+res.ba,200,5312,,,,,5312,5312,5313,,,,,,,2327098179,5657277527,,,,,7984375706,
+java.lang.NegativeArraySizeException: -1224091096
+	at net.automatalib.automaton.base.AbstractCompact.lambda$updateTransitionStorage$0(AbstractCompact.java:261)
+	at net.automatalib.automaton.base.AbstractCompact$TransitionUpdateOperation$1.updateStorage(AbstractCompact.java:363)
+	at net.automatalib.automaton.base.AbstractCompact.updateTransitionStorage(AbstractCompact.java:261)
+	at net.automatalib.automaton.base.AbstractCompactSimpleDeterministic.updateTransitionStorage(AbstractCompactSimpleDeterministic.java:81)
+	at net.automatalib.automaton.base.AbstractCompact.ensureCapacity(AbstractCompact.java:139)
+	at net.automatalib.automaton.base.AbstractCompact.addIntState(AbstractCompact.java:117)
+	at net.automatalib.automaton.base.AbstractCompact.addState(AbstractCompact.java:112)
+	at net.automatalib.automaton.fsa.impl.CompactDFA.addState(CompactDFA.java:80)
+	at OTF.OTFDeterminization.doOTF(OTFDeterminization.java:58)
+	at OTF_benchmark.BenchmarkSimSC$SCJob.run(BenchmarkSimSC.java:102)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/r3ef.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ']
+r3ef.ba,8,128,,,,,128,128,,,3212778,125916,,,,10612667,,33305421348,,,,33316034015,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF.NFATrim.reverse(NFATrim.java:102)
+	at OTF_benchmark.BenchmarkBrz$BrzJob.run(BenchmarkBrz.java:93)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/r3ef.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ_S']
+r3ef.ba,8,128,,,,,128,128,129,,3088937,125916,,,,11260919,21762658,35991532018,,,,36024555595,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF_benchmark.BenchmarkSimBrz$BrzJob.run(BenchmarkSimBrz.java:118)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/res.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=OTF']
+res.ba,200,5312,,,,CCL,5312,5312,,,,,,,,2368380022,,,,,,2368380022,
+java.lang.NegativeArraySizeException: -1224091096
+	at net.automatalib.automaton.base.AbstractCompact.lambda$updateTransitionStorage$0(AbstractCompact.java:261)
+	at net.automatalib.automaton.base.AbstractCompact$TransitionUpdateOperation$1.updateStorage(AbstractCompact.java:363)
+	at net.automatalib.automaton.base.AbstractCompact.updateTransitionStorage(AbstractCompact.java:261)
+	at net.automatalib.automaton.base.AbstractCompactSimpleDeterministic.updateTransitionStorage(AbstractCompactSimpleDeterministic.java:81)
+	at net.automatalib.automaton.base.AbstractCompact.ensureCapacity(AbstractCompact.java:139)
+	at net.automatalib.automaton.base.AbstractCompact.addIntState(AbstractCompact.java:117)
+	at net.automatalib.automaton.base.AbstractCompact.addState(AbstractCompact.java:112)
+	at net.automatalib.automaton.fsa.impl.CompactDFA.addState(CompactDFA.java:80)
+	at OTF.OTFDeterminization.doOTF(OTFDeterminization.java:58)
+	at OTF_benchmark.BenchmarkOTF$OTFJob.run(BenchmarkOTF.java:143)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/tribpseudo3.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=OTF']
+tribpseudo3.ba,8,60317,,,,CCL,60317,58366,,,,,,,,3216888965,,,,,,3216888965,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at OTF.PTInitializers.initDeterministic(PTInitializers.java:72)
+	at OTF.OTFDeterminization.otfMinimization(OTFDeterminization.java:108)
+	at OTF.OTFDeterminization.doOTF(OTFDeterminization.java:77)
+	at OTF_benchmark.BenchmarkOTF$OTFJob.run(BenchmarkOTF.java:143)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/res.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=OTF_S']
+res.ba,200,5312,,,,CCLS,5312,5312,5313,5106,,,,,,2231598507,5545731189,,,,,7777329696,
+java.lang.NegativeArraySizeException: -1224091096
+	at net.automatalib.automaton.base.AbstractCompact.lambda$updateTransitionStorage$0(AbstractCompact.java:261)
+	at net.automatalib.automaton.base.AbstractCompact$TransitionUpdateOperation$1.updateStorage(AbstractCompact.java:363)
+	at net.automatalib.automaton.base.AbstractCompact.updateTransitionStorage(AbstractCompact.java:261)
+	at net.automatalib.automaton.base.AbstractCompactSimpleDeterministic.updateTransitionStorage(AbstractCompactSimpleDeterministic.java:81)
+	at net.automatalib.automaton.base.AbstractCompact.ensureCapacity(AbstractCompact.java:139)
+	at net.automatalib.automaton.base.AbstractCompact.addIntState(AbstractCompact.java:117)
+	at net.automatalib.automaton.base.AbstractCompact.addState(AbstractCompact.java:112)
+	at net.automatalib.automaton.fsa.impl.CompactDFA.addState(CompactDFA.java:80)
+	at OTF.OTFDeterminization.doOTF(OTFDeterminization.java:58)
+	at OTF_benchmark.BenchmarkOTF$OTFJob.run(BenchmarkOTF.java:143)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+

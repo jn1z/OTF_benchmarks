@@ -5,7 +5,6 @@ import java.util.BitSet;
 import java.util.Random;
 
 import OTF.BAFormat;
-import OTF.PowersetDeterminizer;
 import OTF_benchmark.InputWalnut;
 import OTF_benchmark.TabakovVardiRandomNFA;
 import net.automatalib.alphabet.Alphabet;
@@ -13,6 +12,7 @@ import net.automatalib.alphabet.impl.Alphabets;
 import net.automatalib.automaton.fsa.impl.CompactDFA;
 import net.automatalib.automaton.fsa.impl.CompactNFA;
 import net.automatalib.common.util.random.RandomUtil;
+import net.automatalib.util.automaton.fsa.NFAs;
 import org.openjdk.jmh.annotations.Scope;
 import org.openjdk.jmh.annotations.Setup;
 import org.openjdk.jmh.annotations.State;
@@ -38,7 +38,7 @@ public class BisimState {
         }
 
         this.dfa = new CompactDFA<>(alphabet);
-        PowersetDeterminizer.determinize(this.tv, alphabet, this.dfa, false);
+        NFAs.determinize(this.tv, alphabet, this.dfa, false, false);
 
         this.finishedStates = new BitSet(this.dfa.size());
         this.finishedStates.set(0, this.dfa.size());

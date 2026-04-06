@@ -1,0 +1,1222 @@
+######
+/workdir/OTF_benchmark/benchmarks/nfa_220_2.0_2.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ']
+nfa_220_2.0_2.ba,14,221,,,,,221,221,,,2210814,9,,,,31756270,,126212115639,,,,126243871909,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF.NFATrim.reverse(NFATrim.java:102)
+	at OTF_benchmark.BenchmarkBrz$BrzJob.run(BenchmarkBrz.java:93)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_240_2.0_1.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ']
+nfa_240_2.0_1.ba,15,241,,,,,241,241,,,3894505,5,,,,35515954,,392457780468,,,,392493296422,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF.NFATrim.reverse(NFATrim.java:102)
+	at OTF_benchmark.BenchmarkBrz$BrzJob.run(BenchmarkBrz.java:93)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_220_2.0_9.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ']
+nfa_220_2.0_9.ba,14,221,,,,,221,221,,,2140517,9,,,,22489157,,163139999543,,,,163162488700,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF.NFATrim.reverse(NFATrim.java:102)
+	at OTF_benchmark.BenchmarkBrz$BrzJob.run(BenchmarkBrz.java:93)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_220_2.0_1.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ']
+nfa_220_2.0_1.ba,14,221,,,,,221,221,,,2129501,10,,,,28295404,,230906975178,,,,230935270582,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF.NFATrim.reverse(NFATrim.java:102)
+	at OTF_benchmark.BenchmarkBrz$BrzJob.run(BenchmarkBrz.java:93)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_240_2.0_2.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ']
+nfa_240_2.0_2.ba,15,241,,,,,241,241,,,3770157,7,,,,32988607,,564076671053,,,,564109659660,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF.NFATrim.reverse(NFATrim.java:102)
+	at OTF_benchmark.BenchmarkBrz$BrzJob.run(BenchmarkBrz.java:93)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_230_2.0_6.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ']
+nfa_230_2.0_6.ba,15,231,,,,,231,231,,,2742226,8,,,,33388103,,428026685675,,,,428060073778,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF.NFATrim.reverse(NFATrim.java:102)
+	at OTF_benchmark.BenchmarkBrz$BrzJob.run(BenchmarkBrz.java:93)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_220_2.0_6.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ']
+nfa_220_2.0_6.ba,14,221,,,,,221,221,,,2266136,8,,,,24604673,,161730941939,,,,161755546612,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF.NFATrim.reverse(NFATrim.java:102)
+	at OTF_benchmark.BenchmarkBrz$BrzJob.run(BenchmarkBrz.java:93)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_230_2.0_9.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ']
+nfa_230_2.0_9.ba,15,231,,,,,231,231,,,2939665,7,,,,30751780,,614040729277,,,,614071481057,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF.NFATrim.reverse(NFATrim.java:102)
+	at OTF_benchmark.BenchmarkBrz$BrzJob.run(BenchmarkBrz.java:93)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_250_2.0_5.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ']
+nfa_250_2.0_5.ba,15,251,,,,,251,251,,,5478376,6,,,,33743072,,662559405522,,,,662593148594,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF.NFATrim.reverse(NFATrim.java:102)
+	at OTF_benchmark.BenchmarkBrz$BrzJob.run(BenchmarkBrz.java:93)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_220_2.0_3.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ']
+nfa_220_2.0_3.ba,14,221,,,,,221,221,,,2274446,8,,,,22313265,,351422027997,,,,351444341262,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF.NFATrim.reverse(NFATrim.java:102)
+	at OTF_benchmark.BenchmarkBrz$BrzJob.run(BenchmarkBrz.java:93)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_240_2.0_5.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ']
+nfa_240_2.0_5.ba,15,241,,,,,241,241,,,3799279,7,,,,31772038,,720730420599,,,,720762192637,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF.NFATrim.reverse(NFATrim.java:102)
+	at OTF_benchmark.BenchmarkBrz$BrzJob.run(BenchmarkBrz.java:93)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_230_2.0_7.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ']
+nfa_230_2.0_7.ba,15,231,,,,,231,231,,,2818400,4,,,,25659545,,261135433534,,,,261161093079,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF.NFATrim.reverse(NFATrim.java:102)
+	at OTF_benchmark.BenchmarkBrz$BrzJob.run(BenchmarkBrz.java:93)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_230_2.0_1.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ']
+nfa_230_2.0_1.ba,15,231,,,,,231,231,,,2900021,7,,,,33022918,,750180098003,,,,750213120921,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF.NFATrim.reverse(NFATrim.java:102)
+	at OTF_benchmark.BenchmarkBrz$BrzJob.run(BenchmarkBrz.java:93)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_220_2.0_4.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ']
+nfa_220_2.0_4.ba,14,221,,,,,221,221,,,2312721,6,,,,44441342,,171642580869,,,,171687022211,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF.NFATrim.reverse(NFATrim.java:102)
+	at OTF_benchmark.BenchmarkBrz$BrzJob.run(BenchmarkBrz.java:93)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_240_2.0_4.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ']
+nfa_240_2.0_4.ba,15,241,,,,,241,241,,,3789952,7,,,,33992930,,672516320053,,,,672550312983,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF.NFATrim.reverse(NFATrim.java:102)
+	at OTF_benchmark.BenchmarkBrz$BrzJob.run(BenchmarkBrz.java:93)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_230_2.0_0.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ']
+nfa_230_2.0_0.ba,15,231,,,,,231,231,,,2687570,7,,,,31081694,,310946125685,,,,310977207379,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF.NFATrim.reverse(NFATrim.java:102)
+	at OTF_benchmark.BenchmarkBrz$BrzJob.run(BenchmarkBrz.java:93)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_230_2.0_4.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ']
+nfa_230_2.0_4.ba,15,231,,,,,231,231,,,2968415,9,,,,29579664,,520572720468,,,,520602300132,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF.NFATrim.reverse(NFATrim.java:102)
+	at OTF_benchmark.BenchmarkBrz$BrzJob.run(BenchmarkBrz.java:93)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_220_2.0_5.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ']
+nfa_220_2.0_5.ba,14,221,,,,,221,221,,,2131510,5,,,,24919380,,158836030471,,,,158860949851,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF.NFATrim.reverse(NFATrim.java:102)
+	at OTF_benchmark.BenchmarkBrz$BrzJob.run(BenchmarkBrz.java:93)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_220_2.0_7.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ']
+nfa_220_2.0_7.ba,14,221,,,,,221,221,,,2125291,8,,,,29030302,,149551926078,,,,149580956380,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF.NFATrim.reverse(NFATrim.java:102)
+	at OTF_benchmark.BenchmarkBrz$BrzJob.run(BenchmarkBrz.java:93)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_220_2.0_0.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ']
+nfa_220_2.0_0.ba,14,221,,,,,221,221,,,2145286,9,,,,22716898,,361850642854,,,,361873359752,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF.NFATrim.reverse(NFATrim.java:102)
+	at OTF_benchmark.BenchmarkBrz$BrzJob.run(BenchmarkBrz.java:93)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_230_2.0_2.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ']
+nfa_230_2.0_2.ba,15,231,,,,,231,231,,,2753689,6,,,,30332212,,349173617518,,,,349203949730,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF.NFATrim.reverse(NFATrim.java:102)
+	at OTF_benchmark.BenchmarkBrz$BrzJob.run(BenchmarkBrz.java:93)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_220_2.0_8.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ']
+nfa_220_2.0_8.ba,14,221,,,,,221,221,,,2042465,6,,,,23533280,,194757440941,,,,194780974221,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF.NFATrim.reverse(NFATrim.java:102)
+	at OTF_benchmark.BenchmarkBrz$BrzJob.run(BenchmarkBrz.java:93)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_230_2.0_5.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ']
+nfa_230_2.0_5.ba,15,231,,,,,231,231,,,2619303,7,,,,34378923,,356133251597,,,,356167630520,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF.NFATrim.reverse(NFATrim.java:102)
+	at OTF_benchmark.BenchmarkBrz$BrzJob.run(BenchmarkBrz.java:93)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_230_2.0_8.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ']
+nfa_230_2.0_8.ba,15,231,,,,,231,231,,,2789261,5,,,,32425394,,387703805656,,,,387736231050,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF.NFATrim.reverse(NFATrim.java:102)
+	at OTF_benchmark.BenchmarkBrz$BrzJob.run(BenchmarkBrz.java:93)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_240_2.0_7.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ']
+nfa_240_2.0_7.ba,15,241,,,,,241,241,,,3560033,6,,,,30524212,,797711129698,,,,797741653910,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF.NFATrim.reverse(NFATrim.java:102)
+	at OTF_benchmark.BenchmarkBrz$BrzJob.run(BenchmarkBrz.java:93)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_230_2.0_3.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ']
+nfa_230_2.0_3.ba,15,231,,,,,231,231,,,2654428,5,,,,32430160,,223098173141,,,,223130603301,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF.NFATrim.reverse(NFATrim.java:102)
+	at OTF_benchmark.BenchmarkBrz$BrzJob.run(BenchmarkBrz.java:93)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_220_2.0_2.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ_S']
+nfa_220_2.0_2.ba,14,221,,,,,221,221,223,,2210814,9,,,,29399076,40278626,420466717590,,,,420536395292,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF_benchmark.BenchmarkSimBrz$BrzJob.run(BenchmarkSimBrz.java:118)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_220_2.0_9.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ_S']
+nfa_220_2.0_9.ba,14,221,,,,,221,221,223,,2140517,9,,,,30416186,41532011,318159114633,,,,318231062830,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF_benchmark.BenchmarkSimBrz$BrzJob.run(BenchmarkSimBrz.java:118)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_240_2.0_8.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ_S']
+nfa_240_2.0_8.ba,15,241,,,,,241,241,243,,3813881,6,,,,30793063,45700925,748013655263,,,,748090149251,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF_benchmark.BenchmarkSimBrz$BrzJob.run(BenchmarkSimBrz.java:118)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_220_2.0_1.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ_S']
+nfa_220_2.0_1.ba,14,221,,,,,221,221,223,,2129501,10,,,,23502664,43137465,352385872553,,,,352452512682,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF_benchmark.BenchmarkSimBrz$BrzJob.run(BenchmarkSimBrz.java:118)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_230_2.0_6.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ_S']
+nfa_230_2.0_6.ba,15,231,,,,,231,231,233,,2742226,8,,,,30632813,44845079,748861972130,,,,748937450022,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF_benchmark.BenchmarkSimBrz$BrzJob.run(BenchmarkSimBrz.java:118)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_220_2.0_6.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ_S']
+nfa_220_2.0_6.ba,14,221,,,,,221,221,223,,2266136,8,,,,29281478,55827122,349744883702,,,,349829992302,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF_benchmark.BenchmarkSimBrz$BrzJob.run(BenchmarkSimBrz.java:118)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_220_2.0_3.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ_S']
+nfa_220_2.0_3.ba,14,221,,,,,221,221,223,,2274446,8,,,,28978232,40470618,358411877931,,,,358481326781,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF_benchmark.BenchmarkSimBrz$BrzJob.run(BenchmarkSimBrz.java:118)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_240_2.0_9.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ_S']
+nfa_240_2.0_9.ba,15,241,,,,,241,241,243,,3829726,4,,,,31309124,45853012,739350993564,,,,739428155700,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF_benchmark.BenchmarkSimBrz$BrzJob.run(BenchmarkSimBrz.java:118)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_240_2.0_5.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ_S']
+nfa_240_2.0_5.ba,15,241,,,,,241,241,243,,3799279,7,,,,30847799,44948228,746079473576,,,,746155269603,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF_benchmark.BenchmarkSimBrz$BrzJob.run(BenchmarkSimBrz.java:118)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_220_2.0_4.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ_S']
+nfa_220_2.0_4.ba,14,221,,,,,221,221,223,,2312721,6,,,,23457624,41472556,526948714995,,,,527013645175,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF_benchmark.BenchmarkSimBrz$BrzJob.run(BenchmarkSimBrz.java:118)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_230_2.0_7.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ_S']
+nfa_230_2.0_7.ba,15,231,,,,,231,231,233,,2818400,4,,,,30281391,44979109,769726273613,,,,769801534113,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF_benchmark.BenchmarkSimBrz$BrzJob.run(BenchmarkSimBrz.java:118)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_230_2.0_0.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ_S']
+nfa_230_2.0_0.ba,15,231,,,,,231,231,233,,2687570,7,,,,29589458,44810271,670193570703,,,,670267970432,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF_benchmark.BenchmarkSimBrz$BrzJob.run(BenchmarkSimBrz.java:118)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_220_2.0_5.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ_S']
+nfa_220_2.0_5.ba,14,221,,,,,221,221,223,,2131510,5,,,,23843099,40569435,261373435942,,,,261437848476,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF_benchmark.BenchmarkSimBrz$BrzJob.run(BenchmarkSimBrz.java:118)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_220_2.0_0.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ_S']
+nfa_220_2.0_0.ba,14,221,,,,,221,221,223,,2145286,9,,,,29073661,41844505,257435981791,,,,257506899957,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF_benchmark.BenchmarkSimBrz$BrzJob.run(BenchmarkSimBrz.java:118)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_220_2.0_7.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ_S']
+nfa_220_2.0_7.ba,14,221,,,,,221,221,223,,2125291,8,,,,29287221,40657315,406572795562,,,,406642740098,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF_benchmark.BenchmarkSimBrz$BrzJob.run(BenchmarkSimBrz.java:118)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_230_2.0_2.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ_S']
+nfa_230_2.0_2.ba,15,231,,,,,231,231,233,,2753689,6,,,,30377092,44679037,579185643036,,,,579260699165,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF_benchmark.BenchmarkSimBrz$BrzJob.run(BenchmarkSimBrz.java:118)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_220_2.0_8.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ_S']
+nfa_220_2.0_8.ba,14,221,,,,,221,221,223,,2042465,6,,,,22341513,40977207,355996020369,,,,356059339089,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF_benchmark.BenchmarkSimBrz$BrzJob.run(BenchmarkSimBrz.java:118)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_240_2.0_3.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ_S']
+nfa_240_2.0_3.ba,15,241,,,,,241,241,243,,3727064,10,,,,30566644,46019561,792382638693,,,,792459224898,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF_benchmark.BenchmarkSimBrz$BrzJob.run(BenchmarkSimBrz.java:118)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_230_2.0_8.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ_S']
+nfa_230_2.0_8.ba,15,231,,,,,231,231,233,,2789261,5,,,,28875015,44058692,695194598196,,,,695267531903,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF_benchmark.BenchmarkSimBrz$BrzJob.run(BenchmarkSimBrz.java:118)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+
+######
+/workdir/OTF_benchmark/benchmarks/nfa_230_2.0_3.ba
+['java', '-Xmx256G', '-XX:ParallelGCThreads=8', '-jar', '/workdir/OTF_benchmark/build/libs/otf-benchmark.jar', '-m=BRZ_S']
+nfa_230_2.0_3.ba,15,231,,,,,231,231,233,,2654428,5,,,,30419491,41693456,712405114371,,,,712477227318,
+Exception in thread "main" java.lang.OutOfMemoryError: Java heap space
+	at java.base/java.util.Arrays.copyOf(Arrays.java:3609)
+	at java.base/java.util.BitSet.ensureCapacity(BitSet.java:340)
+	at java.base/java.util.BitSet.expandTo(BitSet.java:355)
+	at java.base/java.util.BitSet.set(BitSet.java:450)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:162)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:152)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:148)
+	at net.automatalib.automaton.base.AbstractCompactSimpleNondet.addTransition(AbstractCompactSimpleNondet.java:46)
+	at OTF.NFATrim.reverse(NFATrim.java:121)
+	at OTF_benchmark.BenchmarkSimBrz$BrzJob.run(BenchmarkSimBrz.java:118)
+	at OTF_benchmark.Benchmark.run(Benchmark.java:52)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2045)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at OTF_benchmark.Benchmark.main(Benchmark.java:42)
+

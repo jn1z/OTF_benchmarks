@@ -6,17 +6,17 @@ import java.util.Iterator;
 import java.util.function.BiFunction;
 import java.util.function.Supplier;
 
-import OTF.Model.Cancellation;
 import OTF.Model.Threshold;
 import OTF.NFATrim;
 import OTF.OTFDeterminization;
 import OTF.Registry.Registry;
-import OTF.PowersetDeterminizer;
 import com.google.common.collect.Iterators;
 import net.automatalib.alphabet.Alphabet;
 import net.automatalib.automaton.fsa.DFA;
+import net.automatalib.automaton.fsa.NFA;
 import net.automatalib.automaton.fsa.impl.CompactDFA;
 import net.automatalib.automaton.fsa.impl.CompactNFA;
+import net.automatalib.util.automaton.fsa.NFAs;
 import net.automatalib.util.automaton.minimizer.HopcroftMinimizer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -28,7 +28,7 @@ public class BenchmarkOTFBrz implements IBench {
 
     private final IInput input;
     private final Supplier<Threshold> thresholdSupplier;
-    private final BiFunction<CompactNFA<Integer>, BitSet[], Registry> indexCreator;
+    private final BiFunction<NFA<?, Integer>, BitSet[], Registry> indexCreator;
     private final Logger logger;
     private final boolean bisim;
     private final boolean simulation;
@@ -37,7 +37,7 @@ public class BenchmarkOTFBrz implements IBench {
                            Supplier<Threshold> thresholdSupplier,
                            boolean bisim,
                            boolean simulation,
-                           BiFunction<CompactNFA<Integer>, BitSet[], Registry> indexCreator) {
+                           BiFunction<NFA<?, Integer>, BitSet[], Registry> indexCreator) {
         this.input = input;
         this.thresholdSupplier = thresholdSupplier;
         this.indexCreator = indexCreator;
@@ -76,11 +76,11 @@ public class BenchmarkOTFBrz implements IBench {
                                        logger));
     }
 
-    private static class OTFBrzJob extends AbstractJob {
+    static class OTFBrzJob implements Runnable {
 
         private final IConf<Integer> config;
         private final Threshold threshold;
-        private final BiFunction<CompactNFA<Integer>, BitSet[], Registry> indexCreator;
+        private final BiFunction<NFA<?, Integer>, BitSet[], Registry> indexCreator;
         private final Logger logger;
         private final boolean bisim;
         private final boolean simulation;
@@ -89,7 +89,7 @@ public class BenchmarkOTFBrz implements IBench {
                          Threshold threshold,
                          boolean bisim,
                          boolean simulation,
-                         BiFunction<CompactNFA<Integer>, BitSet[], Registry> indexCreator,
+                         BiFunction<NFA<?, Integer>, BitSet[], Registry> indexCreator,
                          Logger logger) {
             this.config = config;
             this.threshold = threshold;
@@ -101,14 +101,11 @@ public class BenchmarkOTFBrz implements IBench {
 
         @Override
         public void run() {
-            final CompactNFA<Integer> trim = NFATrim.trim(config.buildNFA(), CompactNFA::new);
+            final CompactNFA<Integer> trim = NFATrim.trim(config.buildNFA(), config.buildAlphabet(), CompactNFA::new);
             final Alphabet<Integer> alphabet = trim.getInputAlphabet();
 
-            final Cancellation cancellation = super.initCancellation(Thresholds.paigeTarjan(alphabet.size()));
-            final PowersetDeterminizer determinizer2 = new PowersetDeterminizer(cancellation);
-
             long before, after;
-            LogData logData = new LogData();
+            LogData logData = new LogData(this.config, this.logger);
             logData.sizeTrim = trim.size();
 
             CompactNFA<Integer> rev1MaybeBisimMaybeSim = NFATrim.reverse(trim, CompactNFA::new);
@@ -130,54 +127,46 @@ public class BenchmarkOTFBrz implements IBench {
                 logData.timeSim = (after - before);
             }
 
-            final Registry registry = indexCreator.apply(rev1MaybeBisimMaybeSim, simRels.toArray(new BitSet[0]));;
+            final Registry registry = indexCreator.apply(rev1MaybeBisimMaybeSim, simRels.toArray(new BitSet[0]));
             logData.index = registry.toString();
+
+            simRels.clear(); // Help GC
 
             //final CompactNFA<Integer> reduced = index.getReducedNFA(rev1);
             final CompactNFA<Integer> reduced = rev1MaybeBisimMaybeSim;
 
             final long before2 = System.nanoTime();
-            final DFA<Integer, Integer> dfa1 =
-                OTFDeterminization.doOTF(reduced.powersetView(), alphabet, threshold, registry, cancellation);
+            DFA<Integer, Integer> dfa1 =
+                OTFDeterminization.doOTF(reduced.powersetView(), alphabet, threshold, registry);
 
             logData.threshold = threshold.getName();
             logData.thresholdParam = threshold.getParam();
             logData.thresholdCross = threshold.getCrossings();
 
-            if (!cancellation.isCancelled()) {
-                final long after2 = System.nanoTime();
-                logData.sizeSC1 = dfa1.size();
-                logData.timeSC1 = after2 - before2;
+            final long after2 = System.nanoTime();
+            logData.sizeSC1 = dfa1.size();
+            logData.maxInter = registry.getMaxIntermediateCount();
+            logData.timeSC1 = after2 - before2;
 
-                // no timing here
-                final CompactDFA<Integer> min = HopcroftMinimizer.minimizeDFA(dfa1, alphabet);
-                logData.sizeSC1Min = min.size();
+            // no timing here
+            final CompactDFA<Integer> min = HopcroftMinimizer.minimizeDFA(dfa1, alphabet);
+            logData.sizeSC1Min = min.size();
 
-                final CompactNFA<Integer> rev2 = NFATrim.reverse(dfa1, alphabet, new CompactNFA.Creator<>());
+            final CompactNFA<Integer> rev2 = NFATrim.reverse(dfa1, alphabet, new CompactNFA.Creator<>());
 
-                final long before3 = System.nanoTime();
-                final CompactDFA<Integer> dfa2 = determinizer2.benchmark(rev2, alphabet);
+            dfa1 = null; // Help GC
 
-                if (!cancellation.isCancelled()) {
-                    final long after3 = System.nanoTime();
-                    logData.sizeSC2 = dfa2.size();
-                    logData.timeSC2 = after3 - before3;
+            final long before3 = System.nanoTime();
+            final CompactDFA<Integer> dfa2 = NFAs.determinize(rev2, alphabet, false, false);
+            rev2.clear(); // Help GC
 
-                    // no timing here
-                    final CompactDFA<Integer> min2 = HopcroftMinimizer.minimizeDFA(dfa2);
-                    logData.sizeSC2Min = min2.size(); // should equal sizeSC2
-                } else {
-                    logData.cancel = cancellation.cancelLabel();
+            final long after3 = System.nanoTime();
+            logData.sizeSC2 = dfa2.size();
+            logData.timeSC2 = after3 - before3;
 
-                }
-            } else {
-                logData.cancel = cancellation.cancelLabel();
-
-            }
-
-            logger.info("{},{}", config.getConfig(), logData);
-
-            cancellation.cancel();
+            // no timing here
+            final CompactDFA<Integer> min2 = HopcroftMinimizer.minimizeDFA(dfa2);
+            logData.sizeSC2Min = min2.size(); // should equal sizeSC2
         }
     }
 }

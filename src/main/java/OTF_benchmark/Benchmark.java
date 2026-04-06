@@ -1,95 +1,159 @@
 package OTF_benchmark;
 
-import java.util.ArrayList;
-import java.util.BitSet;
-import java.util.List;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
-import java.util.function.BiFunction;
-import java.util.function.IntFunction;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Path;
 
-import OTF.Registry.AntichainForestRegistry;
-import OTF.Registry.Registry;
+import OTF.BAFormat;
 import OTF.Model.Threshold;
+import OTF.Registry.AntichainForestRegistry;
 import net.automatalib.automaton.fsa.impl.CompactNFA;
+import net.automatalib.exception.FormatException;
 import org.openjdk.jmh.runner.RunnerException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import picocli.CommandLine;
+import picocli.CommandLine.Command;
+import picocli.CommandLine.Option;
+import picocli.CommandLine.Parameters;
 
-public class Benchmark {
+@Command(name = "java -jar /path/to/benchmark.jar", mixinStandardHelpOptions = true)
+public class Benchmark implements Runnable {
 
     private final static Logger LOGGER = LoggerFactory.getLogger(Benchmark.class);
 
-    final static int PARAM_MIN = 5_000;
-    final static int PARAM_MAX = 5_000;
-    final static int PARAM_INC = 5_000;
+    @Option(names = {"-b", "--bisim"}, description = "use bisimulation quotienting", defaultValue = "true")
+    private boolean bisimulation;
 
-    final static int TIMEOUT_DUR = 10;
-    final static TimeUnit TIMEOUT_UNIT = TimeUnit.MINUTES;
-    final static ScheduledExecutorService INTERRUPTOR = Executors.newSingleThreadScheduledExecutor();
+    @Option(names = {"-t", "--threshold"}, description = "threshold strategy", defaultValue = "ADAPTIVE")
+    private Thresholds threshold;
+
+    @Option(names = {"-p", "--threshold-param"}, description = "threshold parameter", defaultValue = "5000")
+    private int thresholdParam;
+
+    @Option(names = {"-m", "--method"}, required = true, description = "minimization method")
+    private Methods method;
+
+    @Parameters(paramLabel = "FILE", arity = "1", description = "path to the benchmark file")
+    private Path file;
 
     public static void main(String[] args) throws RunnerException, InterruptedException {
+        int exitCode = new CommandLine(new Benchmark()).execute(args);
+        System.exit(exitCode);
+    }
 
-        final int threads = args.length > 0 ? Integer.parseInt(args[0]) : 4;
-        final List<IBench> benchmarks = new ArrayList<>();
+    @Override
+    public void run() {
+        final IConf<Integer> config = loadConfig(file);
+        final Threshold t = this.threshold.getThreshold(thresholdParam);
+        final Runnable benchmark = method.build(config, t, bisimulation);
 
-        final List<BiFunction<CompactNFA<Integer>, BitSet[], Registry>> indices = List.of(AntichainForestRegistry::new);
-        final List<IntFunction<Threshold>> thresholds = List.of(
-                //Threshold::maxSteps,
-                //Threshold::maxInc,
-                Threshold::adaptiveSteps);
-        final List<IInput> inputs = List.of(new InputWalnut());
+        benchmark.run();
+    }
 
-        for (int i = PARAM_MAX; i >= PARAM_MIN; i -= PARAM_INC) {
-            for (IInput input : inputs) {
-                for (BiFunction<CompactNFA<Integer>, BitSet[], Registry> index : indices) {
-                    for (IntFunction<Threshold> threshold : thresholds) {
-                        final int param = i;
-                        benchmarks.add(new BenchmarkOTF(input, () -> threshold.apply(param), true, false, index));
-                        benchmarks.add(new BenchmarkOTFBrz(input, () -> threshold.apply(param), true, false, index));
-                        benchmarks.add(new BenchmarkOTF(input, () -> threshold.apply(param), true, true, index));
-                        benchmarks.add(new BenchmarkOTFBrz(input, () -> threshold.apply(param), true, true, index));
-                    }
-                }
-                benchmarks.add(new BenchmarkSC(input));
-                benchmarks.add(new BenchmarkBrz(input));
-                benchmarks.add(new BenchmarkSimSC(input));
-                benchmarks.add(new BenchmarkSimBrz(input));
+    private IConf<Integer> loadConfig(Path path) {
+
+        String abs = path.toFile().getAbsolutePath();
+
+        if (abs.endsWith(".ba")) {
+            try (InputStream is = Files.newInputStream(path)) {
+                CompactNFA<Integer> nfa = BAFormat.convertBAFromCompactNFA(is);
+                return new InputWalnut.Configuration<>(path.getFileName().toString(), nfa);
+            } catch (IOException | FormatException e) {
+                throw new IllegalArgumentException(e);
             }
+        } else if (abs.endsWith(".mata")) {
+            return new InputMata.Configuration(path);
+        } else {
+            throw new IllegalArgumentException("Cannot parse file format");
         }
+    }
 
-        try {
-            ExecutorService warmupService = Executors.newFixedThreadPool(threads);
+    private enum Methods {
+        SC {
+            @Override
+            Runnable build(IConf<Integer> config, Threshold threshold, boolean bisim) {
+                return new BenchmarkSC.SCJob<>(config, bisim, LOGGER);
+            }
+        },
+        SC_S {
+            @Override
+            Runnable build(IConf<Integer> config, Threshold threshold, boolean bisim) {
+                return new BenchmarkSimSC.SCJob<>(config, bisim, LOGGER);
+            }
+        },
+        BRZ {
+            @Override
+            Runnable build(IConf<Integer> config, Threshold threshold, boolean bisim) {
+                return new BenchmarkBrz.BrzJob(config, bisim, LOGGER);
+            }
+        },
+        BRZ_S {
+            @Override
+            Runnable build(IConf<Integer> config, Threshold threshold, boolean bisim) {
+                return new BenchmarkSimBrz.BrzJob(config, bisim, LOGGER);
+            }
+        },
+        OTF {
+            @Override
+            Runnable build(IConf<Integer> config, Threshold threshold, boolean bisim) {
+                return new BenchmarkOTF.OTFJob(config, threshold, bisim, false, AntichainForestRegistry::new, LOGGER);
+            }
+        },
+        OTF_S {
+            @Override
+            Runnable build(IConf<Integer> config, Threshold threshold, boolean bisim) {
+                return new BenchmarkOTF.OTFJob(config, threshold, bisim, true, AntichainForestRegistry::new, LOGGER);
+            }
+        },
+        BRZ_OTF {
+            @Override
+            Runnable build(IConf<Integer> config, Threshold threshold, boolean bisim) {
+                return new BenchmarkOTFBrz.OTFBrzJob(config,
+                                                     threshold,
+                                                     bisim,
+                                                     false,
+                                                     AntichainForestRegistry::new,
+                                                     LOGGER);
+            }
+        },
+        BRZ_OTF_S {
+            @Override
+            Runnable build(IConf<Integer> config, Threshold threshold, boolean bisim) {
+                return new BenchmarkOTFBrz.OTFBrzJob(config,
+                                                     threshold,
+                                                     bisim,
+                                                     true,
+                                                     AntichainForestRegistry::new,
+                                                     LOGGER);
+            }
+        };
 
-            for (IBench benchmark : benchmarks) {
-                benchmark.warmups().forEachRemaining(warmupService::execute);
+        abstract Runnable build(IConf<Integer> config, Threshold threshold, boolean bisim);
+    }
+
+    private enum Thresholds {
+        MAX_INC {
+            @Override
+            Threshold getThreshold(int param) {
+                return Threshold.maxInc(param);
             }
 
-            warmupService.shutdown();
-            boolean warmupTerminated = warmupService.awaitTermination(Long.MAX_VALUE, TimeUnit.DAYS);
-
-            if (!warmupTerminated) {
-                warmupService.shutdownNow();
-                throw new IllegalStateException("There were non-terminated threads");
+        },
+        MAX_STEP {
+            @Override
+            Threshold getThreshold(int param) {
+                return Threshold.maxSteps(param);
             }
-
-            ExecutorService jobService = Executors.newFixedThreadPool(threads);
-
-            for (IBench benchmark : benchmarks) {
-                benchmark.jobs().forEachRemaining(jobService::execute);
+        },
+        ADAPTIVE {
+            @Override
+            Threshold getThreshold(int param) {
+                return Threshold.adaptiveSteps(param);
             }
+        };
 
-            jobService.shutdown();
-            boolean jobsTerminated = jobService.awaitTermination(Long.MAX_VALUE, TimeUnit.DAYS);
-
-            if (!jobsTerminated) {
-                final List<Runnable> runnables = jobService.shutdownNow();
-                LOGGER.warn("There were non-terminated threads: {}", runnables);
-            }
-        } finally {
-            INTERRUPTOR.shutdown();
-        }
+        abstract Threshold getThreshold(int param);
     }
 }

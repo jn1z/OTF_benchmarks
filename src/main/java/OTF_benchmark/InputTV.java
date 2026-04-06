@@ -83,6 +83,11 @@ public class InputTV implements IInput {
         }
 
         @Override
+        public Alphabet<Integer> buildAlphabet() {
+            return alphabet;
+        }
+
+        @Override
         public String getConfig() {
             return seed + "," + DF.format(td) + "," + size;
         }

@@ -1,10 +1,10 @@
 # OTF (On-The-Fly) Algorithm Benchmarks
 
-See the paper [Deconstructing Subset Construction: Reducing While Determinizing](https://arxiv.org/abs/2505.10319) for more details, submitted for publication.
+See the paper [Deconstructing Subset Construction: Reducing While Determinizing]() for more details.
 
 # Algorithm Configurations
 
-See the [OTF tool](https://github.com/jn1z/OTF) or the paper for details on algorithm configurations.
+
 
 # Language Projection
 
@@ -19,6 +19,12 @@ Here we introduce even more structure into the resultant NFA. We language-projec
 This is a very finicky benchmark where slight changes in original NFA size,
 acceptance, or language-projection cause the generated NFA to be either trivial
 or experience blowup.
+
+In particular, we look at alphabets of size [16, 24, 32],
+language compression factors [1.3, 1.4, 1.5, 1.6, 1.7],
+accepted factor (fraction of DFA states that are accepting) of 0.1 -- essentially meaning 1 or 2 statea are accepting,
+NFA sizes of exactly 4 states,
+and an XOR product operation.
 
 Java code: [InputTVLanguageProjectionIterated.java](src/main/java/OTF_benchmark/InputTVLanguageProjectionIterated.java)
 

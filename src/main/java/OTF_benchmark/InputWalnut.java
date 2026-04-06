@@ -10,6 +10,7 @@ import java.util.Map;
 import OTF.BAFormat;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Maps;
+import net.automatalib.alphabet.Alphabet;
 import net.automatalib.automaton.fsa.impl.CompactNFA;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -23,7 +24,8 @@ public class InputWalnut implements IInput {
     static {
         try {
             // Test .ba files, except unsolved problem.
-            final List<String> resources = Utils.findResources("/walnut/", s -> s.endsWith(".ba"));
+            final List<String> resources = Utils.findResources("/walnut/",
+                s -> (s.endsWith(".ba") && !(s.equals("tribpseudo3.ba"))));
             NFAS = Maps.newLinkedHashMapWithExpectedSize(resources.size());
 
             for (String resource : resources) {
@@ -72,11 +74,16 @@ public class InputWalnut implements IInput {
         return new Configuration<>(entry.getKey(), entry.getValue());
     }
 
-    private record Configuration<I>(String name, CompactNFA<I> nfa) implements IConf<I> {
+    record Configuration<I>(String name, CompactNFA<I> nfa) implements IConf<I> {
 
         @Override
         public CompactNFA<I> buildNFA() {
             return nfa;
+        }
+
+        @Override
+        public Alphabet<I> buildAlphabet() {
+            return nfa.getInputAlphabet();
         }
 
         @Override

@@ -1,10 +1,8 @@
 package OTF_benchmark;
 
-import OTF.Model.Cancellation;
 import OTF.Model.Threshold;
 import OTF.NFATrim;
 import OTF.OTFDeterminization;
-import OTF.PowersetDeterminizer;
 import OTF.Registry.AntichainForestRegistry;
 import OTF.Registry.Registry;
 import OTF.Simulation.ParallelSimulation;
@@ -16,6 +14,7 @@ import net.automatalib.alphabet.Alphabet;
 import net.automatalib.automaton.fsa.DFA;
 import net.automatalib.automaton.fsa.impl.CompactDFA;
 import net.automatalib.automaton.fsa.impl.CompactNFA;
+import net.automatalib.util.automaton.fsa.NFAs;
 import net.automatalib.util.automaton.minimizer.HopcroftMinimizer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -57,7 +56,7 @@ public class BenchmarkSimBrz implements IBench {
             new BrzJob(configuration, bisim, logger));
     }
 
-    private static class BrzJob extends AbstractJob {
+    static class BrzJob implements Runnable {
 
         private final IConf<Integer> config;
         private final Logger logger;
@@ -72,17 +71,16 @@ public class BenchmarkSimBrz implements IBench {
 
         @Override
         public void run() {
-            final CompactNFA<Integer> trim = NFATrim.trim(config.buildNFA(), CompactNFA::new);
+            final CompactNFA<Integer> trim = NFATrim.trim(config.buildNFA(), config.buildAlphabet(), CompactNFA::new);
             final Alphabet<Integer> alphabet = trim.getInputAlphabet();
 
-            final Cancellation cancellation = super.initCancellation(Thresholds.paigeTarjan(alphabet.size()));
-            final PowersetDeterminizer determinizer = new PowersetDeterminizer(cancellation);
-
             long before, after;
-            LogData logData = new LogData();
+            LogData logData = new LogData(this.config, this.logger);
             logData.sizeTrim = trim.size();
 
             CompactNFA<Integer> rev1MaybeBisim = NFATrim.reverse(trim, CompactNFA::new);
+
+            trim.clear(); // Help GC
 
             if (this.bisim) {
                 before = System.nanoTime();
@@ -101,45 +99,39 @@ public class BenchmarkSimBrz implements IBench {
             logData.timeSim = (after - before);
 
             Threshold threshold = Threshold.noop();
-            Registry registry = new AntichainForestRegistry<>(rev1MaybeBisim, simRels.toArray(new BitSet[0]));;
+            Registry registry = new AntichainForestRegistry<>(rev1MaybeBisim, simRels.toArray(new BitSet[0]));
+
+            simRels.clear(); // Help GC
 
             before = System.nanoTime();
-            final DFA<Integer, Integer> dfa1 =
-                    OTFDeterminization.doOTF(rev1MaybeBisim.powersetView(), alphabet, threshold, registry, cancellation);
+            DFA<Integer, Integer> dfa1 =
+                    OTFDeterminization.doOTF(rev1MaybeBisim.powersetView(), alphabet, threshold, registry);
 
-            if (!cancellation.isCancelled()) {
-                after = System.nanoTime();
-                logData.sizeSC1 = dfa1.size();
-                logData.timeSC1 = (after-before);
+            after = System.nanoTime();
+            logData.sizeSC1 = dfa1.size();
+            logData.timeSC1 = (after-before);
 
-                // no timing here
-                final CompactDFA<Integer> min = HopcroftMinimizer.minimizeDFA(dfa1, alphabet);
-                logData.sizeSC1Min = min.size();
+            // no timing here
+            final CompactDFA<Integer> min = HopcroftMinimizer.minimizeDFA(dfa1, alphabet);
+            logData.sizeSC1Min = min.size();
 
-                final CompactNFA<Integer> rev2 = NFATrim.reverse(dfa1, alphabet, new CompactNFA.Creator<>());
+            final CompactNFA<Integer> rev2 = NFATrim.reverse(dfa1, alphabet, new CompactNFA.Creator<>());
 
-                before = System.nanoTime();
-                final CompactDFA<Integer> dfa2 = determinizer.benchmark(rev2, alphabet);
+            dfa1 = null; // Help GC
 
-                if (!cancellation.isCancelled()) {
-                    after = System.nanoTime();
-                    logData.sizeSC2 = dfa2.size();
-                    logData.timeSC2 = (after-before);
+            before = System.nanoTime();
+            final CompactDFA<Integer> dfa2 = NFAs.determinize(rev2, alphabet, false, false);
+            rev2.clear(); // Help GC
 
-                    // no timing here
-                    final CompactDFA<Integer> min2 = HopcroftMinimizer.minimizeDFA(dfa2);
-                    logData.sizeSC2Min = min2.size(); // should equal sizeSC2
-                } else {
-                    logData.cancel = cancellation.cancelLabel();
-                }
-            } else {
-                //final CompactDFA<I> min = cancellation.isOom() ? null : PaigeTarjanMinimization.minimizeDFA(dfa1);
-                logData.cancel = cancellation.cancelLabel();
-            }
+            after = System.nanoTime();
+            logData.sizeSC2 = dfa2.size();
+            logData.timeSC2 = (after-before);
 
-            logger.info("{},{}", config.getConfig(), logData);
+            rev1MaybeBisim.clear(); // Help GC
 
-            cancellation.cancel();
+            // no timing here
+            final CompactDFA<Integer> min2 = HopcroftMinimizer.minimizeDFA(dfa2);
+            logData.sizeSC2Min = min2.size(); // should equal sizeSC2
         }
     }
 }

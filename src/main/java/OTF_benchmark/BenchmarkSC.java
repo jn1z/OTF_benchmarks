@@ -2,13 +2,12 @@ package OTF_benchmark;
 
 import java.util.Iterator;
 
-import OTF.Model.Cancellation;
 import OTF.NFATrim;
-import OTF.PowersetDeterminizer;
 import com.google.common.collect.Iterators;
 import net.automatalib.alphabet.Alphabet;
 import net.automatalib.automaton.fsa.impl.CompactDFA;
 import net.automatalib.automaton.fsa.impl.CompactNFA;
+import net.automatalib.util.automaton.fsa.NFAs;
 import net.automatalib.util.automaton.minimizer.HopcroftMinimizer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -50,7 +49,7 @@ public class BenchmarkSC implements IBench {
             new SCJob<>(configuration, bisim, logger));
     }
 
-    private static class SCJob<I> extends AbstractJob {
+    static class SCJob<I> implements Runnable {
         private final IConf<I> config;
         private final Logger logger;
         private final boolean bisim;
@@ -64,14 +63,11 @@ public class BenchmarkSC implements IBench {
 
         @Override
         public void run() {
-            CompactNFA<I> trimMaybeBiSim = NFATrim.trim(config.buildNFA(), CompactNFA::new);
+            CompactNFA<I> trimMaybeBiSim = NFATrim.trim(config.buildNFA(), config.buildAlphabet(), CompactNFA::new);
             final Alphabet<I> alphabet = trimMaybeBiSim.getInputAlphabet();
 
-            final Cancellation cancellation = super.initCancellation(Thresholds.paigeTarjan(alphabet.size()));
-            final PowersetDeterminizer determinizer = new PowersetDeterminizer(cancellation);
-
             long before, after;
-            LogData logData = new LogData();
+            LogData logData = new LogData(this.config, this.logger);
             logData.sizeTrim = trimMaybeBiSim.size();
 
             if (bisim) {
@@ -83,23 +79,18 @@ public class BenchmarkSC implements IBench {
             }
 
             before = System.nanoTime();
-            final CompactDFA<I> dfa = determinizer.benchmark(trimMaybeBiSim, alphabet);
-            if (!cancellation.isCancelled()) {
-                after = System.nanoTime();
-                logData.sizeSC1 = dfa.size();
-                logData.timeSC1 = (after-before);
-                before = System.nanoTime();
-                final CompactDFA<I> min = HopcroftMinimizer.minimizeDFA(dfa, alphabet);
-                after = System.nanoTime();
-                logData.sizeSC1Min = min.size();
-                logData.timeSC1Min = (after-before);
-            } else {
-                logData.cancel = cancellation.cancelLabel();
-            }
+            final CompactDFA<I> dfa = NFAs.determinize(trimMaybeBiSim, alphabet, false, false);
+            trimMaybeBiSim.clear(); // Help GC
 
-            logger.info("{},{}", config.getConfig(), logData);
+            after = System.nanoTime();
+            logData.sizeSC1 = dfa.size();
+            logData.timeSC1 = (after-before);
+            before = System.nanoTime();
 
-            cancellation.cancel();
+            final CompactDFA<I> min = HopcroftMinimizer.minimizeDFA(dfa, alphabet);
+            after = System.nanoTime();
+            logData.sizeSC1Min = min.size();
+            logData.timeSC1Min = (after-before);
         }
     }
 }

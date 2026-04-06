@@ -1,0 +1,210 @@
+options {
+	LOOKAHEAD = 1;
+	STATIC = false;
+	SUPPORT_CLASS_VISIBILITY_PUBLIC = false;
+}
+
+PARSER_BEGIN(SimpleMataParser)
+
+package OTF_benchmark.parser;
+
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.HashMap;
+import java.util.LinkedHashSet;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import net.automatalib.alphabet.Alphabet;
+import net.automatalib.alphabet.impl.Alphabets;
+import net.automatalib.automaton.fsa.MutableNFA;
+import net.automatalib.automaton.fsa.NFA;
+import net.automatalib.automaton.fsa.impl.CompactNFA;
+import net.automatalib.automaton.fsa.impl.FastNFA;
+import net.automatalib.common.util.Triple;
+import net.automatalib.exception.FormatException;
+
+public class SimpleMataParser {
+
+	private NFA<?, Integer> nfa;
+	private Alphabet<Integer> alphabet;
+
+	private Set<String> labels;
+    private Set<String> states;
+	private Set<String> initials;
+	private Set<String> finals;
+	private List<Triple<String, String, String>> transitions;
+	private boolean parsed;
+
+	public NFA<?, Integer> getNFA() {
+		if (!this.parsed) {
+			throw new IllegalStateException("parse() needs to be called first");
+		}
+		return this.nfa;
+	}
+
+	public Alphabet<Integer> getAlphabet() {
+		if (!this.parsed) {
+			throw new IllegalStateException("parse() needs to be called first");
+		}
+		return this.alphabet;
+	}
+
+	public void parse() throws FormatException {
+        if (!this.parsed) {
+			try {
+				file();
+			} catch (ParseException e) {
+				throw new FormatException(e);
+			}
+			this.parsed = true;
+
+			Alphabet<String> alphabet = Alphabets.fromCollection(this.labels);
+			this.alphabet = Alphabets.integers(0, alphabet.size() - 1);
+			MutableNFA<?, Integer> nfa;
+
+			if (this.states.size() < 2_500) {
+				nfa = new CompactNFA<>(this.alphabet, this.states.size());
+			} else {
+				nfa = new FastNFA<>(this.alphabet);
+			}
+
+			parse(nfa, alphabet);
+			this.nfa = nfa;
+		}
+	}
+
+	private <S, I> void parse(MutableNFA<S, Integer> nfa, Alphabet<String> alphabet) {
+		Map<String, S> name2State = new HashMap<String, S>();
+		for (String s : this.states) {
+			if (this.initials.contains(s)) {
+				name2State.put(s, nfa.addInitialState(this.finals.contains(s)));
+			} else {
+				name2State.put(s, nfa.addState(this.finals.contains(s)));
+			}
+		}
+		for (Triple<String, String, String> t : this.transitions) {
+			nfa.addTransition(name2State.get(t.getFirst()), alphabet.getSymbolIndex(t.getSecond()), name2State.get(t.getThird()));
+		}
+	}
+}
+
+
+PARSER_END(SimpleMataParser)
+
+SKIP :
+{
+	" "
+|	"\t"
+}
+
+TOKEN:
+{
+	< SECTION: "@NFA" >
+|	< ALPHABET: "%Alphabet" >
+|	< STATES: "%States" >
+|	< INITIAL: "%Initial" >
+|	< FINAL: "%Final" >
+|	< FINAL_STATES: "Final States" >
+|	< TRANSITIONS: "Transitions" >
+|	< DASH: "-" >
+|	< NEWLINE : "\r" | "\n" | "\r\n">
+|	< STRING : (<LETTER> | <NUMBER>)+>
+|	< #LETTER: ["a"-"z","A"-"Z"] >
+|	< #NUMBER: ["0"-"9"] >
+}
+
+SKIP:
+{
+	< BEGIN_COMMENT: "#" > : IN_COMMENT
+}
+
+<IN_COMMENT> SKIP:
+{
+	< EOL : "\r" | "\n" | "\r\n" > : DEFAULT
+|	< ~[] >
+}
+
+
+private void file():
+{}
+{
+	{
+		this.labels = new LinkedHashSet<String>();
+		this.states = new LinkedHashSet<String>();
+		this.initials = new HashSet<String>();
+		this.finals = new HashSet<String>();
+		this.transitions = new ArrayList<Triple<String, String, String>>();
+	}
+	section() <NEWLINE>
+	(alphabet() <NEWLINE>)?
+	(states() <NEWLINE>)?
+	(initials() <NEWLINE>)?
+	(finals() <NEWLINE>)?
+	transitions() <EOF>
+}
+
+private void section():
+{}
+{
+	<SECTION>(<DASH><STRING>)?
+}
+
+private void alphabet():
+{
+	Token t;
+}
+{
+	<ALPHABET>(<DASH><STRING>)? (t = <STRING> { this.labels.add(t.toString()); })*
+}
+
+private void states():
+{
+	Token t;
+}
+{
+	<STATES>(<DASH><STRING>)? (t = <STRING> { this.states.add(t.toString()); })*
+}
+
+private void initials():
+{
+	Token t;
+}
+{
+	<INITIAL> (t = <STRING> { this.initials.add(t.toString()); })*
+}
+
+private void finals():
+{
+	Token t;
+}
+{
+	<FINAL> (t = <STRING> { this.finals.add(t.toString()); })*
+}
+
+private void transitions():
+{}
+{
+	(transition())*
+}
+
+private void transition():
+{
+	Token src;
+	Token input;
+	Token tgt;
+}
+{
+	src = <STRING> input = <STRING> tgt = <STRING> (<NEWLINE> | <EOF>)
+	{
+		String srcs = src.toString();
+		String inputs = input.toString();
+		String tgts = tgt.toString();
+		this.transitions.add(Triple.of(srcs, inputs, tgts));
+		this.labels.add(inputs);
+		this.states.add(srcs);
+		this.states.add(tgts);
+	}
+}

@@ -1,6 +1,5 @@
 package OTF_benchmark;
 
-import OTF.PowersetDeterminizer;
 import it.unimi.dsi.fastutil.ints.IntArrayList;
 import it.unimi.dsi.fastutil.ints.IntIntImmutablePair;
 import it.unimi.dsi.fastutil.ints.IntIntPair;
@@ -9,6 +8,7 @@ import net.automatalib.alphabet.Alphabet;
 import net.automatalib.alphabet.impl.Alphabets;
 import net.automatalib.automaton.fsa.impl.CompactDFA;
 import net.automatalib.automaton.fsa.impl.CompactNFA;
+import net.automatalib.util.automaton.fsa.NFAs;
 import net.automatalib.util.automaton.minimizer.HopcroftMinimizer;
 
 import java.util.*;
@@ -35,10 +35,10 @@ public class TVLanguageProjection {
     CompactNFA<Integer> nfa2 = randomNFA(r, size, alphSize, compressFactor, af);
 
     CompactDFA<Integer> dfa1 = new CompactDFA<>(nfa1.getInputAlphabet());
-    PowersetDeterminizer.determinize(nfa1, nfa1.getInputAlphabet(), dfa1, true);
+    NFAs.determinize(nfa1, nfa1.getInputAlphabet(), dfa1, false, true);
 
     CompactDFA<Integer> dfa2 = new CompactDFA<>(nfa2.getInputAlphabet());
-    PowersetDeterminizer.determinize(nfa2, nfa2.getInputAlphabet(), dfa2, true);
+    NFAs.determinize(nfa1, nfa1.getInputAlphabet(), dfa1, false, true);
 
     CompactDFA<Integer> dfa3 = productDFA(dfa1, dfa2, (a, b) -> a ^ b);
     CompactDFA<Integer> dfa4 = HopcroftMinimizer.minimizeDFA(dfa3, dfa3.getInputAlphabet());

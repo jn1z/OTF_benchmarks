@@ -1,0 +1,187 @@
+options {
+	LOOKAHEAD = 1;
+	STATIC = false;
+	SUPPORT_CLASS_VISIBILITY_PUBLIC = false;
+}
+
+PARSER_BEGIN(TimbukParser)
+
+package OTF_benchmark.parser;
+
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import net.automatalib.alphabet.Alphabet;
+import net.automatalib.alphabet.impl.Alphabets;
+import net.automatalib.automaton.fsa.impl.CompactNFA;
+import net.automatalib.exception.FormatException;
+
+public class TimbukParser {
+
+	private Alphabet<String> alphabet;
+	private CompactNFA<String> nfa;
+
+	private String init;
+	private Set<String> labels;
+	private Map<String, Integer> stateMap;
+	private boolean parsed;
+
+	public CompactNFA<String> getNFA() {
+		if (!this.parsed) {
+			throw new IllegalStateException("parse() needs to be called first");
+		}
+		return this.nfa;
+	}
+
+    public Alphabet<String> getAlphabet() {
+		if (!this.parsed) {
+			throw new IllegalStateException("parse() needs to be called first");
+		}
+		return this.alphabet;
+    }
+
+	public void parse() throws FormatException {
+        if (!this.parsed) {
+			try {
+				file();
+			} catch (ParseException e) {
+				throw new FormatException(e);
+			}
+			this.parsed = true;
+		}
+	}
+}
+
+
+PARSER_END(TimbukParser)
+
+SKIP :
+{
+	" "
+|	"\r"
+|	"\t"
+|	"\n"
+}
+
+TOKEN:
+{
+	< OPS: "Ops" >
+|	< AUTOMATON: "Automaton" >
+|	< STATES: "States" >
+|	< FINAL_STATES: "Final States" >
+|	< TRANSITIONS: "Transitions" >
+|	< LPAREN: "(" >
+|	< RPAREN: ")" >
+|	< COLON: ":" >
+|	< COMMA: "," >
+|	< EDGEOP: "->" >
+|	< INT: (<NUMBER>)+>
+|	< STRING : (<LETTER> | <NUMBER>)+>
+|	< #LETTER: ["a"-"z","A"-"Z"] >
+|	< #NUMBER: ["0"-"9"] >
+}
+
+private void file():
+{}
+{
+	<OPS> label_list() automaton()
+}
+
+private void label_list():
+{}
+{
+	{
+		this.labels = new LinkedHashSet<String>();
+	}
+	(label_decl())*
+	{
+		this.alphabet = Alphabets.fromCollection(this.labels);
+	}
+}
+
+private void label_decl():
+{
+	Token label;
+    Token arity;
+}
+{
+	label = <STRING> <COLON> arity = <INT>
+	{
+		String l = label.toString();
+		this.labels.add(l);
+		if (Integer.parseInt(arity.toString()) == 0) {
+			this.init = l;
+		}
+	}
+}
+
+private void automaton():
+{}
+{
+	{
+		this.nfa = new CompactNFA<String>(this.alphabet);
+	}
+	<AUTOMATON> <STRING> <STATES> state_list() <FINAL_STATES> final_list() <TRANSITIONS> transition_list()
+}
+
+private void state_list():
+{}
+{
+	{
+		this.stateMap = new LinkedHashMap<String, Integer>();
+	}
+	(state(true))*
+}
+
+private String state(boolean add):
+{
+	Token s;
+}
+{
+	s = <STRING>
+	{
+		final String result = s.toString();
+		if (add) {
+			final int i = this.nfa.addIntState(false);
+			this.stateMap.put(result, i);
+		}
+        return result;
+	}
+}
+
+private void final_list():
+{
+	String s;
+}
+{
+	(s = state(false) { this.nfa.setAccepting(this.stateMap.get(s), true); })*
+}
+
+private void transition_list():
+{}
+{
+	(transition())*
+}
+
+private void transition():
+{
+	Token l;
+	String s;
+	List<String> states = new ArrayList<>();
+}
+{
+	l = <STRING> (<LPAREN> (s = state(false) { states.add(s); } (<COMMA> s = state(false) { states.add(s); })*)? <RPAREN>)? <EDGEOP> s = state(false)
+	{
+		final String label = l.toString();
+		if (label.equals(this.init)) {
+            this.nfa.setInitial(this.stateMap.get(s), true);
+		}
+		for (String iter : states) {
+		    this.nfa.addTransition(this.stateMap.get(iter), label, this.stateMap.get(s));
+		}
+	}
+}

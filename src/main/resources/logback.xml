@@ -1,0 +1,11 @@
+<configuration>
+    <appender name="BENCHMARK" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%msg</pattern>
+        </encoder>
+    </appender>
+
+    <logger name="OTF_benchmark.Benchmark">
+        <appender-ref ref="BENCHMARK"/>
+    </logger>
+</configuration>

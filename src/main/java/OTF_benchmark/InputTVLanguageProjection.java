@@ -6,6 +6,8 @@ import java.util.*;
 
 import OTF.NFATrim;
 import com.google.common.collect.Iterators;
+import net.automatalib.alphabet.Alphabet;
+import net.automatalib.alphabet.impl.Alphabets;
 import net.automatalib.automaton.fsa.impl.CompactNFA;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -95,6 +97,11 @@ public class InputTVLanguageProjection implements IInput {
         @Override
         public CompactNFA<Integer> buildNFA() {
             return TVLanguageProjection.randomNFA(new Random(seed), size, alphSize, cf, AF);
+        }
+
+        @Override
+        public Alphabet<Integer> buildAlphabet() {
+            return Alphabets.integers(0, alphSize - 1);
         }
 
         @Override
